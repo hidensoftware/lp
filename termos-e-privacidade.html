@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso e Política de Privacidade | Hiden</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      --dark-bg: #070919;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #cbd5e1;
+      --bg-light: #f8fafc;
+      --accent-blue: #4f46e5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background-color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    /* Top Bar */
+    .top-header {
+      background: var(--dark-bg);
+      color: #ffffff;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+    }
+
+    .back-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Hero */
+    .legal-hero {
+      padding: 40px 0 24px;
+      text-align: left;
+    }
+
+    .legal-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .legal-hero p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* File / Folder Tabs Structure */
+    .legal-content {
+      padding-bottom: 80px;
+    }
+
+    .tabs-wrapper {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      margin-bottom: -1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background-color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      border-radius: 6px 6px 0 0;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .tab-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tab-btn + .tab-btn {
+      border-left: none;
+    }
+
+    .tab-btn:hover {
+      background-color: #e9eef5;
+      color: var(--text-main);
+    }
+
+    /* Aba Ativa */
+    .tab-btn.active {
+      background-color: #ffffff;
+      color: var(--accent-blue);
+      border-bottom: 1px solid #ffffff;
+      padding-top: 16px;
+      z-index: 3;
+    }
+
+    /* Content Box */
+    .legal-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 0 8px 8px 8px;
+      padding: 48px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 1;
+    }
+
+    .legal-section {
+      display: none;
+    }
+
+    .legal-section.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .legal-box h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .legal-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 32px 0 12px;
+    }
+
+    .legal-box p, .legal-box ul {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .legal-box ul {
+      padding-left: 24px;
+    }
+
+    .legal-box li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-card {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-blue);
+      padding: 18px 22px;
+      border-radius: 0 6px 6px 0;
+      margin: 24px 0;
+    }
+
+    .highlight-card p {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .legal-box {
+        padding: 28px 20px;
+        border-radius: 0 0 8px 8px;
+      }
+      .tab-btn {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-header" style="position: sticky; top: 0; z-index: 1000;">
+    <div class="container nav-container">
+      <a href="index.html" class="back-link">
+        <i data-lucide="arrow-left"></i> Voltar ao site
+      </a>
+      <img src="./img/logo_branco.png" height="40" alt="Hiden">
+    </div>
+  </header>
+
+  <section class="legal-hero">
+    <div class="container">
+      <h1>Informações Legais</h1>
+      <p>Última atualização: Setembro de 2026</p>
+    </div>
+  </section>
+
+  <main class="legal-content">
+    <div class="container">
+      
+      <div class="tabs-wrapper">
+        <button class="tab-btn active" id="btn-termos" onclick="switchTab('termos')">
+          <i data-lucide="file-text"></i> Termos de Uso
+        </button>
+        <button class="tab-btn" id="btn-privacidade" onclick="switchTab('privacidade')">
+          <i data-lucide="shield-check"></i> Política de Privacidade
+        </button>
+      </div>
+
+      <div class="legal-box">
+        
+        <section id="content-termos" class="legal-section active">
+          <h2>Termos e Condições de Uso</h2>
+
+          <p>Seja bem-vindo aos serviços da <strong>Hiden</strong>. Ao contratar nossos serviços, acessar nosso site ou utilizar qualquer fluxo, API ou automação desenvolvida por nós, você declara estar integralmente ciente e de acordo com as cláusulas aqui estipuladas.</p>
+
+          <div class="highlight-card">
+            <p><strong>Aviso Fundamental de Isenção:</strong> A Hiden fornece desenvolvimento de soluções de software, integrações e fluxos de automação. Não possuímos controle direto sobre infraestruturas, políticas ou disponibilidade de plataformas de terceiros (Meta, WhatsApp, Google, CRMs, etc.).</p>
+          </div>
+
+          <h3>1. Objeto e Escopo dos Serviços</h3>
+          <p>A Hiden atua no desenvolvimento, configuração, integração e manutenção de automações personalizadas de processos operacionais e de atendimento digital, conectando sistemas pré-existentes através de APIs e conectores em nuvem.</p>
+
+          <h3>2. Plataformas de Terceiros e Isenção Total de Responsabilidade</h3>
+          <ul>
+            <li><strong>Disponibilidade de APIs:</strong> Não nos responsabilizamos por instabilidades, indisponibilidades, manutenções, mudanças de diretrizes ou encerramento de endpoints de terceiros (ex: WhatsApp Business API, Meta Platform, Google Workspace, provedores de IA ou CRMs).</li>
+            <li><strong>Bloqueios e Banimentos:</strong> O uso de mensagens em massa, disparos ou qualquer ação que infrinja as políticas de uso do WhatsApp ou plataformas terceiras é de total e exclusiva responsabilidade do CONTRATANTE/USUÁRIO. A Hiden não se responsabiliza por eventuais banimentos, números bloqueados, sanções ou perdas de canais de comunicação.</li>
+          </ul>
+
+          <h3>3. Responsabilidades e Deveres do Cliente</h3>
+          <p>O Cliente é o único e exclusivo responsável por:</p>
+          <ul>
+            <li>Garantir que possui a base legal e o consentimento explícito dos titulares (leads e clientes) com os quais interage via automação, em total conformidade com a LGPD;</li>
+            <li>Manter a segurança e confidencialidade de suas credenciais de acesso, chaves de API (tokens) e senhas;</li>
+            <li>Validar e aprovar os fluxos de mensagens, regras de negócio e cálculos lógicos implementados nas automações antes e durante o uso produtivo.</li>
+          </ul>
+
+          <h3>4. Propriedade Intelectual</h3>
+          <p>Todos os modelos de código, scripts reutilizáveis, lógicas operacionais e templates arquitetados pela Hiden são de propriedade intelectual exclusiva da Hiden. Ao cliente é concedida uma licença de uso limitada, não exclusiva e intransferível durante a vigência do contrato. Os dados cadastrais e o conteúdo de negócio processado pertencem exclusivamente ao Cliente.</p>
+
+          <h3>5. Limitação Extrema de Responsabilidade e Danos</h3>
+          <p>Em nenhuma hipótese a Hiden, seus sócios, colaboradores ou prestadores serão responsabilizados por lucros cessantes, perdas financeiras indiretas, perda de oportunidade de negócios, corrupção de dados ou interrupções causadas por falhas técnicas de terceiros. A responsabilidade financeira total da Hiden, caso decorrente de decisão judicial transitada em julgado, limita-se estritamente ao valor total pago pelo cliente no mês da respectiva ocorrência.</p>
+
+          <h3>6. Foro e Legislação Aplicável</h3>
+          <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o Foro da Comarca de São Paulo/SP para dirimir quaisquer dúvidas ou litígios decorrentes deste instrumento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+        </section>
+
+        <section id="content-privacidade" class="legal-section">
+          <h2>Política de Privacidade (LGPD)</h2>
+
+          <p>A presente Política de Privacidade regula o tratamento de dados pessoais realizado pela <strong>Hiden</strong>, em total observância à Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD) e ao Marco Civil da Internet (Lei nº 12.965/2014).</p>
+
+          <h3>1. Posição Jurídica: Controlador vs. Operador</h3>
+          <ul>
+            <li><strong>Como Controladora:</strong> A Hiden coleta dados de seus próprios clientes (nome, e-mail, telefone, cargo, empresa) para fins de faturamento, contato comercial e suporte técnico.</li>
+            <li><strong>Como Operadora:</strong> Quando executa fluxos de automação em nome do Cliente (processando dados de leads, orçamentos, agendamentos), a Hiden atua estritamente como <em>Operadora</em> de dados, cabendo ao Cliente a posição de <em>Controlador</em> e a responsabilidade primária de governança desses dados.</li>
+          </ul>
+
+          <h3>2. Coleta e Finalidade do Tratamento</h3>
+          <p>Tratamos apenas os dados estritamente necessários para a prestação dos serviços contratados, fundamentados nas seguintes bases legais:</p>
+          <ul>
+            <li><strong>Execução de Contrato:</strong> Para criar e operar as integrações, emitir orçamentos e prestar suporte;</li>
+            <li><strong>Legítimo Interesse:</strong> Para aprimoramento contínuo da estabilidade dos fluxos e segurança cibernética;</li>
+            <li><strong>Cumprimento de Obrigação Legal:</strong> Para emissão de notas fiscais e registros de conexão (Marco Civil da Internet).</li>
+          </ul>
+
+          <h3>3. Compartilhamento e Subprocessadores</h3>
+          <p>Para manter as automações funcionando em alta performance, os dados poderão ser transmitidos e processados por provedores de infraestrutura e subprocessadores seguros (tais como provedores de nuvem AWS/Google Cloud, plataformas de mensageria, gateways de pagamento e sistemas de IA), os quais seguem padrões estritos de criptografia e confidencialidade.</p>
+
+          <h3>4. Segurança e Retenção de Dados</h3>
+          <p>Empregamos protocolos de segurança robustos, incluindo tráfego criptografado via HTTPS/TLS, autenticação segura por tokens e monitoramento de acessos. Os dados são retidos apenas pelo período necessário ao cumprimento de suas finalidades ou prazos prescricionais legais.</p>
+
+          <h3>5. Direitos do Titular de Dados</h3>
+          <p>O titular de dados pessoais pode, a qualquer momento, solicitar a confirmação da existência de tratamento, o acesso aos dados, a correção de dados incompletos ou a exclusão de seus dados pessoais em nosso banco de dados, salvo quando a manutenção for obrigatória por lei.</p>
+
+          <h3>6. Contato do Encarregado de Dados (DPO)</h3>
+          <p>Para dúvidas, requisições sobre a LGPD ou solicitações de titulares, entre em contato diretamente com nossa equipe de privacidade através do e-mail: <strong>privacidade@hiden.com.br</strong>.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Hiden. Todos os direitos reservados. Termos e Políticas em conformidade com as leis vigentes.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Desabilita o salto nativo de rolagem do histórico do navegador
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    lucide.createIcons();
+
+    function switchTab(tabId) {
+      // Esconde as seções e desativa os botões
+      document.querySelectorAll('.legal-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      // Ativa o conteúdo correto sem conflitar com IDs de âncoras nativas
+      const targetSection = document.getElementById('content-' + tabId);
+      const targetBtn = document.getElementById('btn-' + tabId);
+
+      if (targetSection && targetBtn) {
+        targetSection.classList.add('active');
+        targetBtn.classList.add('active');
+      }
+
+      // Atualiza a URL mantendo o histórico limpo
+      history.replaceState(null, '', '#' + tabId);
+    }
+
+    // Ao carregar a página
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'privacidade' || hash === 'termos') {
+        switchTab(hash);
+      }
+      // Força a tela a ficar no topo sem rolar para baixo
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+</html>
